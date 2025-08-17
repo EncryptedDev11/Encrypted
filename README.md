@@ -1,4 +1,530 @@
 # Encrypted
 Discord Server
-[Regole.html](https://github.com/user-attachments/files/21822613/Regole.html)
-[index.html](https://github.com/user-attachments/files/21822614/index.html)
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCRYPTED 2.0 | Secure Community</title>
+    <style>
+        :root {
+            --cyber-blue: #00f0ff;
+            --cyber-purple: #bd00ff;
+            --dark-bg: #0a0a12;
+            --card-bg: rgba(10, 10, 30, 0.7);
+            --font-main: 'Orbitron', 'Rajdhani', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            font-family: var(--font-main);
+            background: var(--dark-bg);
+            color: white;
+            margin: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(189, 0, 255, 0.05) 0%, transparent 25%);
+            overflow-x: hidden;
+        }
+        
+        /* Navbar minimalista */
+        .nav-container {
+            background: rgba(10, 10, 18, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 8px var(--cyber-blue);
+        }
+        
+        .nav-link.active {
+            color: var(--cyber-blue);
+            font-weight: bold;
+            border-bottom: 2px solid var(--cyber-blue);
+        }
+        
+        .glitch-text {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            position: relative;
+            color: var(--cyber-blue);
+            text-shadow: 0 0 10px var(--cyber-blue);
+        }
+        
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+        
+        .glitch-text::before {
+            color: var(--cyber-purple);
+            z-index: -1;
+            animation: glitch 3s infinite;
+        }
+        
+        .glitch-text::after {
+            color: var(--cyber-blue);
+            z-index: -2;
+            animation: glitch 2s reverse infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+        
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .invite-btn {
+            background: linear-gradient(45deg, var(--cyber-blue), var(--cyber-purple));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .invite-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 300px;
+            transition: transform 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 240, 255, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--cyber-blue);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            margin-top: 4rem;
+        }
+        
+        .cyber-loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--cyber-blue);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .server-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--cyber-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                gap: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .nav-link {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="Regole.html" class="nav-link">Regole</a>
+    </div>
+
+    <header>
+        <h1 class="glitch-text" data-text="ENCRYPTED 2.0">ENCRYPTED 2.0</h1>
+    </header>
+    
+    <section class="hero">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">LA TUA PROTEZIONE INIZIA QUI</h2>
+        <p style="max-width: 600px; line-height: 1.6;">
+            Un rifugio sicuro nato per proteggere dagli attacchi informatici.<br>
+            Community dedicata alla sicurezza e al gaming protetto.
+        </p>
+        <a href="https://discord.gg/s5xN6vHP" class="invite-btn">Unisciti Ora</a>
+        
+        <div class="server-stats">
+            <div class="stat-box">
+                <div class="stat-number">24/7</div>
+                <div>Protezione</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3+</div>
+                <div>Bot di Sicurezza</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5+</div>
+                <div>Membri</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Sicurezza</h3>
+            <p>Protezione avanzata contro minacce informatiche e raid</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>Bot Specializzati</h3>
+            <p>Automod, antiraid e strumenti di crittografia</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🎮</div>
+            <h3>Gaming</h3>
+            <p>Sessioni protette per giocare senza rischi</p>
+        </div>
+    </section>
+    
+    <section style="text-align: center; padding: 4rem 2rem; max-width: 800px; margin: 0 auto;">
+        <h2 style="margin-bottom: 2rem;">COSA TI OFFRIAMO</h2>
+        <p style="line-height: 1.7; margin-bottom: 2rem;">
+            Dopo gli attacchi subiti dal server di c00lkidd, abbiamo creato ENCRYPTED 2.0 per garantire un ambiente sicuro dove discutere, giocare e condividere senza preoccupazioni.
+        </p>
+        <div class="cyber-loader"></div>
+    </section>
+    
+    <footer>
+        <p>© 2023 ENCRYPTED 2.0 | Tutti i diritti riservati</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+            Creato con ❤️ per proteggere la community
+        </p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regole - ENCRYPTED 2.0</title>
+    <style>
+        :root {
+            --cyber-red: #ff003c;
+            --cyber-blue: #00f0ff;
+            --cyber-purple: #bd00ff;
+            --dark-bg: #0a0a12;
+            --card-bg: rgba(10, 10, 30, 0.7);
+            --font-main: 'Orbitron', 'Rajdhani', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            font-family: var(--font-main);
+            background: var(--dark-bg);
+            color: white;
+            margin: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 60, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 240, 255, 0.05) 0%, transparent 25%);
+        }
+        
+        /* Navbar minimalista */
+        .nav-container {
+            background: rgba(10, 10, 18, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 8px var(--cyber-blue);
+        }
+        
+        .nav-link.active {
+            color: var(--cyber-red);
+            font-weight: bold;
+            border-bottom: 2px solid var(--cyber-red);
+        }
+        
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+        }
+        
+        .glitch-text {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            position: relative;
+            color: var(--cyber-red);
+            text-shadow: 0 0 10px var(--cyber-red);
+        }
+        
+        .rules-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .rule-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--cyber-red);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+        
+        .rule-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .rule-offense {
+            flex: 1;
+            font-weight: bold;
+            color: var(--cyber-blue);
+            min-width: 250px;
+        }
+        
+        .rule-punishment {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            min-width: 250px;
+        }
+        
+        .punishment-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--cyber-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .perma-ban {
+            color: var(--cyber-red);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .warning-note {
+            background: rgba(255, 0, 60, 0.1);
+            border: 1px solid var(--cyber-red);
+            padding: 1.5rem;
+            margin: 3rem 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 0, 60, 0.2);
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 600px) {
+            .rule-offense, .rule-punishment {
+                min-width: 100%;
+            }
+            .rule-punishment {
+                margin-top: 1rem;
+                padding-left: 2rem;
+            }
+            
+            .nav-container {
+                gap: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .nav-link {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="Regole.html" class="nav-link active">Regole</a>
+    </div>
+    
+    <header>
+        <h1 class="glitch-text" data-text="REGOLE ENCRYPTED 2.0">REGOLE ENCRYPTED 2.0</h1>
+    </header>
+    
+    <div class="rules-container">
+        <div class="warning-note">
+            <h3>⚠️ TUTTE LE SANZIONI SONO AUTOMATICHE ⚠️</h3>
+            <p>I nostri bot registrano ogni infrazione e applicano immediatamente le sanzioni</p>
+        </div>
+        
+        <div class="rule-card">
+            <div class="rule-offense">Invitare gente non autorizzata</div>
+            <div class="rule-punishment">
+                <div class="punishment-icon">!</div>
+                <div>Ban (24 ore)</div>
+            </div>
+        </div>
+        
+        <div class="rule-card">
+            <div class="rule-offense">Invitare persone nella lista nera</div>
+            <div class="rule-punishment">
+                <div class="punishment-icon">!!</div>
+                <div>Ban (7 giorni)</div>
+            </div>
+        </div>
+        
+        <div class="rule-card">
+            <div class="rule-offense">Insulti non amichevoli o pesanti</div>
+            <div class="rule-punishment">
+                <div class="punishment-icon">!</div>
+                <div>Ban (1 ora)</div>
+            </div>
+        </div>
+        
+        <div class="rule-card">
+            <div class="rule-offense">Screen del server in altre chat</div>
+            <div class="rule-punishment">
+                <div class="punishment-icon">💀</div>
+                <div class="perma-ban">PermaBan</div>
+            </div>
+        </div>
+        
+        <div class="rule-card">
+            <div class="rule-offense">Inviare foto inadatte al server</div>
+            <div class="rule-punishment">
+                <div class="punishment-icon">!</div>
+                <div>Ban (30 minuti)</div>
+            </div>
+        </div>
+        
+        <div class="rule-card">
+            <div class="rule-offense">Inviare link o file con virus</div>
+            <div class="rule-punishment">
+                <div class="punishment-icon">💀</div>
+                <div>
+                    <span class="perma-ban">PermaBan</span> + 
+                    <span style="color: var(--cyber-blue);">Segnalazione</span>
+                    <div style="font-size: 0.8rem; margin-top: 0.3rem;">
+                        (I bot analizzano i file e notificano agli admin)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 ENCRYPTED 2.0 | Protezione garantita dai nostri sistemi automatizzati</p>
+    </footer>
+</body>
+</html>
+
