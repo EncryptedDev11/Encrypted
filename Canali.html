@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canali del Server | ENCRYPTED 2.0</title>
+    <style>
+        :root {
+            --cyber-blue: #00f0ff;
+            --cyber-purple: #bd00ff;
+            --cyber-green: #00ff88;
+            --dark-bg: #0a0a12;
+            --card-bg: rgba(10, 10, 30, 0.7);
+            --font-main: 'Orbitron', 'Rajdhani', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            font-family: var(--font-main);
+            background: var(--dark-bg);
+            color: white;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.5s;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(189, 0, 255, 0.05) 0%, transparent 25%);
+        }
+        
+        .nav-container {
+            background: rgba(10, 10, 18, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--cyber-green);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--cyber-green);
+            text-shadow: 0 0 8px var(--cyber-green);
+        }
+        
+        .nav-link.active {
+            color: var(--cyber-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--cyber-green);
+        }
+        
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .glitch-text {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            position: relative;
+            color: var(--cyber-green);
+            text-shadow: 0 0 10px var(--cyber-green);
+        }
+        
+        .channels-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .channel-category {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            color: var(--cyber-purple);
+            border-left: 4px solid var(--cyber-purple);
+            padding-left: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .channel {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .channel:hover {
+            transform: translateY(-3px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
+        }
+        
+        .channel-icon {
+            margin-right: 1rem;
+            color: var(--cyber-blue);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 600px) {
+            .channel-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                gap: 1rem;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar con collegamenti a tutte le pagine -->
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="Regole.html" class="nav-link">Regole</a>
+        <a href="Canali.html" class="nav-link active">Canali</a>
+    </div>
+    
+    <header>
+        <h1 class="glitch-text" data-text="CANALI ENCRYPTED 2.0">CANALI ENCRYPTED 2.0</h1>
+    </header>
+    
+    <div class="channels-container">
+        <div class="channel-category">
+            <h2 class="category-title">Canali Testuali</h2>
+            <div class="channel-list">
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>consigli-modifiche-script-bot</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>globale</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>chiarimenti</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>bot-da-aggiungere-o-eliminare</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>tabella-comandi-terminale</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>lista-□</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">#</span>
+                    <span>linguaggi-programmazione-consigli</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="channel-category">
+            <h2 class="category-title">Canali Vocali</h2>
+            <div class="channel-list">
+                <div class="channel">
+                    <span class="channel-icon">🔊</span>
+                    <span>A#</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">🔊</span>
+                    <span>B#</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">🔊</span>
+                    <span>C#</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">🔊</span>
+                    <span>Moderatori-Capo</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">🎮</span>
+                    <span>Gaming-night</span>
+                </div>
+                <div class="channel">
+                    <span class="channel-icon">🎮</span>
+                    <span>Gaming-day</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 ENCRYPTED 2.0 | Tutti i diritti riservati</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+            Creato con ❤️ per proteggere la community
+        </p>
+    </footer>
+
+    <!-- Script di navigazione (stesso in tutte le pagine) -->
+    <script>
+        // 1. Animazione quando la pagina si carica
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 50);
+        });
+
+        // 2. Gestione dei click sui menu
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Evita ricaricamenti se già sulla pagina corrente
+                if (this.classList.contains('active')) return;
+                
+                e.preventDefault();
+                // Animazione di uscita
+                document.body.style.opacity = '0';
+                
+                // Cambia pagina dopo 0.4 secondi
+                setTimeout(() => {
+                    window.location.href = this.getAttribute('href');
+                }, 400);
+            });
+        });
+
+        // 3. Disabilita transizione al refresh
+        window.onbeforeunload = function() {
+            document.body.style.transition = 'none';
+        };
+    </script>
+</body>
+</html>
