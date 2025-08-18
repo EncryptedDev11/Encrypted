@@ -1,6 +1,191 @@
-[index.html](https://github.com/user-attachments/files/21822663/index.html)# Encrypted
+[Youtube.html](https://github.com/user-attachments/files/21837667/Youtube.html)[index.html](https://github.com/user-attachments/files/21822663/index.html)# Encrypted
 Discord Server
 [Uploa[Regole.html](https://github.com/user-attachments/files/21822664/Regole.html)ding index.html…]()
 [Canali.html](https://github.com/user-attachments/files/21824104/Canali.html)
+[Up<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube | ENCRYPTED 2.0</title>
+    <style>
+        :root {
+            --cyber-blue: #00f0ff;
+            --cyber-purple: #bd00ff;
+            --cyber-red: #ff003c;
+            --dark-bg: #0a0a12;
+            --card-bg: rgba(10, 10, 30, 0.7);
+            --font-main: 'Orbitron', 'Rajdhani', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            font-family: var(--font-main);
+            background: var(--dark-bg);
+            color: white;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.5s;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 60, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 240, 255, 0.05) 0%, transparent 25%);
+        }
+        
+        .nav-container {
+            background: rgba(10, 10, 18, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--cyber-red);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 8px var(--cyber-blue);
+        }
+        
+        .nav-link.active {
+            color: var(--cyber-red);
+            font-weight: bold;
+            border-bottom: 2px solid var(--cyber-red);
+        }
+        
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+        }
+        
+        .glitch-text {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            position: relative;
+            color: var(--cyber-red);
+            text-shadow: 0 0 10px var(--cyber-red);
+        }
+        
+        .content-container {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .youtube-card {
+            background: var(--card-bg);
+            border: 1px solid var(--cyber-red);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .subscribe-btn {
+            background: linear-gradient(45deg, #ff0000, #cc0000);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        .subscribe-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.6);
+            background: linear-gradient(45deg, #ff0000, #ff3333);
+        }
+        
+        .youtube-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #ff0000;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 0, 60, 0.2);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="Regole.html" class="nav-link">Regole</a>
+        <a href="Canali.html" class="nav-link">Canali</a>
+        <a href="YouTube.html" class="nav-link active">YouTube</a>
+    </div>
+    
+    <header>
+        <h1 class="glitch-text" data-text="CANALE YOUTUBE">CANALE YOUTUBE</h1>
+    </header>
+    
+    <div class="content-container">
+        <div class="youtube-card">
+            <div class="youtube-icon">▶️</div>
+            <h2>VISITA IL NOSTRO CANALE</h2>
+            <p>Contenuti esclusivi su sicurezza informatica e gaming protetto</p>
+            
+            <!-- PULSANTE PRINCIPALE -->
+            <a href="https://www.youtube.com/@c00lkiddfan-e5c" class="subscribe-btn" target="_blank">
+                ISCRIVITI ORA
+            </a>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem;">
+                Clicca il pulsante per accedere direttamente al canale YouTube
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 ENCRYPTED 2.0 | Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+        // Animazione quando la pagina si carica
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 50);
+        });
+
+        // Gestione dei click sui menu
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.classList.contains('active')) return;
+                
+                e.preventDefault();
+                document.body.style.opacity = '0';
+                
+                setTimeout(() => {
+                    window.location.href = this.getAttribute('href');
+                }, 400);
+            });
+        });
+    </script>
+</body>
+</html>loading Youtube.html…]()
 
         
