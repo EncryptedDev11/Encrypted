@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto | ENCRYPTED 2.0</title>
+    <style>
+        :root {
+            --cyber-blue: #00f0ff;
+            --cyber-purple: #bd00ff;
+            --cyber-red: #ff003c;
+            --cyber-green: #00ff88;
+            --dark-bg: #0a0a12;
+            --card-bg: rgba(10, 10, 30, 0.8);
+            --font-main: 'Orbitron', 'Rajdhani', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            font-family: var(--font-main);
+            background: var(--dark-bg);
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Sfondo animato ENCRYPTED */
+        .encrypted-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .binary-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(transparent 95%, rgba(0, 240, 255, 0.1) 100%),
+                linear-gradient(90deg, transparent 95%, rgba(189, 0, 255, 0.1) 100%);
+            background-size: 100px 100px, 150px 150px;
+            animation: rainMove 20s infinite linear;
+        }
+
+        @keyframes rainMove {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 0 1000px, 1000px 0; }
+        }
+
+        .encrypted-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(189, 0, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 40% 80%, rgba(255, 0, 60, 0.03) 0%, transparent 30%);
+            animation: pulseGlow 8s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        .floating-code {
+            position: absolute;
+            color: rgba(0, 240, 255, 0.1);
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Navbar */
+        .nav-container {
+            background: rgba(10, 10, 18, 0.95);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--cyber-blue);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 5px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link:hover {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 15px var(--cyber-blue);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            color: var(--cyber-blue);
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: var(--cyber-blue);
+            animation: pulseLine 2s infinite;
+        }
+
+        @keyframes pulseLine {
+            0%, 100% { opacity: 0.5; width: 50%; }
+            50% { opacity: 1; width: 80%; }
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .server-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--cyber-blue), var(--cyber-purple), var(--cyber-red));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(189, 0, 255, 0.5);
+            margin: 0;
+            animation: titleGlitch 3s infinite;
+            position: relative;
+            display: inline-block;
+        }
+
+        @keyframes titleGlitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .server-title::before,
+        .server-title::after {
+            content: "E̴͌̾N̵̚͠C̷͛̽R̸̎͛Y̶̽̕P̸̎̚T̷̽͠E̵̽͠D̴̽̚";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .server-title::before {
+            color: var(--cyber-purple);
+            z-index: -1;
+            animation: glitch-1 2.5s infinite;
+        }
+
+        .server-title::after {
+            color: var(--cyber-red);
+            z-index: -2;
+            animation: glitch-2 2s infinite reverse;
+        }
+
+        @keyframes glitch-1 {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes glitch-2 {
+            0% { transform: translate(0); }
+            20% { transform: translate(3px, -3px); }
+            40% { transform: translate(3px, 3px); }
+            60% { transform: translate(-3px, -3px); }
+            80% { transform: translate(-3px, 3px); }
+            100% { transform: translate(0); }
+        }
+        
+        .welcome-subtitle {
+            font-size: 1.3rem;
+            color: var(--cyber-blue);
+            margin-top: 1rem;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            animation: subtitlePulse 3s infinite;
+        }
+
+        @keyframes subtitlePulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; text-shadow: 0 0 20px rgba(0, 240, 255, 0.8); }
+        }
+        
+        /* Contenuto */
+        .welcome-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .welcome-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.2);
+        }
+
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 240, 255, 0.1),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .welcome-card:hover::before {
+            left: 100%;
+        }
+        
+        .card-title {
+            color: var(--cyber-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title::before {
+            content: '⟩';
+            color: var(--cyber-purple);
+            margin-right: 1rem;
+            font-size: 2rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-item::before {
+            content: '▸';
+            color: var(--cyber-green);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cyber-blue), transparent);
+        }
+        
+        @media (max-width: 768px) {
+            .server-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sfondo animato ENCRYPTED -->
+    <div class="encrypted-bg">
+        <div class="binary-rain"></div>
+        <div class="encrypted-overlay"></div>
+        <!-- Aggiungi elementi flottanti di codice -->
+        <div class="floating-code" style="left: 10%; animation-delay: 0s;">01001001 01101110 01101001 01111010 01101001 01101111</div>
+        <div class="floating-code" style="left: 30%; animation-delay: 2s;">{encrypted: true, security: max}</div>
+        <div class="floating-code" style="left: 50%; animation-delay: 4s;">#define PROTECTION_LEVEL 999</div>
+        <div class="floating-code" style="left: 70%; animation-delay: 6s;">firewall.activate()</div>
+        <div class="floating-code" style="left: 90%; animation-delay: 8s;">secure_connection established</div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="Benvenuto.html" class="nav-link active">Benvenuto</a>
+        <a href="Regole.html" class="nav-link">Regole</a>
+        <a href="Canali.html" class="nav-link">Canali</a>
+        <a href="YouTube.html" class="nav-link">YouTube</a>
+    </div>
+    
+    <header>
+        <h1 class="server-title">E̴͌̾N̵̚͠C̷͛̽R̸̎͛Y̶̽̕P̸̎̚T̷̽͠E̵̽͠D̴̽̚</h1>
+        <p class="welcome-subtitle">La tua protezione inizia da qui</p>
+    </header>
+    
+    <div class="welcome-container">
+        <div class="welcome-card">
+            <h2 class="card-title">👋 BENVENUTO NEL BUNKER DIGITALE</h2>
+            <p>Sei appena entrato in uno spazio sicuro creato per proteggere la community da attacchi informatici e garantire un'esperienza di gaming protetta.</p>
+        </div>
+
+        <div class="welcome-card">
+            <h2 class="card-title">🎯 COME INIZIARE</h2>
+            <ul class="feature-list">
+                <li class="feature-item">Presentati nel canale #globale</li>
+                <li class="feature-item">Leggi le regole del server</li>
+                <li class="feature-item">Esplora i canali disponibili</li>
+                <li class="feature-item">Unisciti alle sessioni gaming</li>
+                <li class="feature-item">Chiedi aiuto se necessario</li>
+            </ul>
+        </div>
+
+        <div class="welcome-card">
+            <h2 class="card-title">🛡️ COSA TI OFFRIAMO</h2>
+            <ul class="feature-list">
+                <li class="feature-item">Protezione 24/7 da attacchi</li>
+                <li class="feature-item">Bot di sicurezza avanzati</li>
+                <li class="feature-item">Ambiente gaming sicuro</li>
+                <li class="feature-item">Supporto tecnico rapido</li>
+                <li class="feature-item">Community attiva e friendly</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 E̴͌̾N̵̚͠C̷͛̽R̸̎͛Y̶̽̕P̸̎̚T̷̽͠E̵̽͠D̴̽̚ | Tutti i diritti riservati</p>
+        <p style="margin-top: 1rem; opacity: 0.7;">La tua sicurezza è la nostra priorità assoluta</p>
+    </footer>
+
+    <script>
+        // Animazione di caricamento
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aggiungi più elementi di codice flottanti
+            for (let i = 0; i < 10; i++) {
+                const code = document.createElement('div');
+                code.className = 'floating-code';
+                code.style.left = Math.random() * 100 + '%';
+                code.style.animationDelay = Math.random() * 10 + 's';
+                code.style.animationDuration = (15 + Math.random() * 15) + 's';
+                
+                const codes = [
+                    '0x' + Math.random().toString(16).substr(2, 8),
+                    'encrypt("secure_data")',
+                    'firewall_status: active',
+                    'antihack.shield.up',
+                    'connection.secure=true',
+                    'ping 192.168.1.' + Math.floor(Math.random() * 255),
+                    'access_granted: level_' + Math.floor(Math.random() * 10),
+                    'crypto.encrypt("message")',
+                    'security.protocol=v3',
+                    'authentication.success'
+                ];
+                
+                code.textContent = codes[Math.floor(Math.random() * codes.length)];
+                document.querySelector('.encrypted-bg').appendChild(code);
+            }
+
+            // Animazione smooth per le card
+            const cards = document.querySelectorAll('.welcome-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+
+        // Gestione navigazione
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.classList.contains('active')) return;
+                
+                e.preventDefault();
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.4s ease';
+                
+                setTimeout(() => {
+                    window.location.href = this.getAttribute('href');
+                }, 400);
+            });
+        });
+    </script>
+</body>
+</html>
